@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scholly AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+
+    <div class="layout">
+      <header class="hero card">
+        <div class="hero-copy">
+          <p class="eyebrow">Study chatbot</p>
+          <h1>SCHOLLY AI</h1>
+          <p class="lead">Ask a question, add one file if needed, and get a clear answer.</p>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="sidebar">
+          <section class="card panel">
+            <div class="panel-head">
+              <p class="eyebrow">How you want the answer :D</p>
+              <h2>Answer settings</h2>
+            </div>
+
+            <div class="field">
+              <label for="tone">Writing style</label>
+              <select id="tone" name="tone">
+                <option value="friendly">Friendly</option>
+                <option value="formal">Formal</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="depth">Answer length</label>
+              <select id="depth" name="depth">
+                <option value="concise">Concise</option>
+                <option value="detailed">Detailed</option>
+              </select>
+            </div>
+
+            <p class="caption">Scholly AI helps you understand first, then gives the answer.</p>
+          </section>
+        </aside>
+
+        <section class="chat card">
+          <div class="chat-top">
+            <div>
+              <p class="eyebrow">Welcome to Chat!</p>
+              <h2>Chat to learn</h2>
+            </div>
+            <span class="chip" id="attachment-preview">No attachment</span>
+          </div>
+
+          <div class="chat-history" id="chat-history">
+            <article class="message assistant intro">
+              <div class="message-meta">
+                <span>Scholly AI</span>
+                <span>Ready to help</span>
+              </div>
+              <div class="message-body">
+                <p>Start with a question. Add one file if you need more context.</p>
+              </div>
+            </article>
+          </div>
+
+          <form class="composer" id="chat-form">
+            <label class="sr-only" for="message">Question</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Example: Explain the difference between HTTP GET and POST in simple terms."
+            ></textarea>
+
+            <div class="composer-row">
+              <div class="upload-wrap">
+                <label class="upload" for="attachment">
+                  <span>Upload</span>
+                  <input id="attachment" name="attachment" type="file" />
+                </label>
+                <p class="caption">
+                  One document, image, or audio file per message.
+                </p>
+              </div>
+
+              <button class="send" type="submit" id="send-button">
+                Send Message
+              </button>
+            </div>
+          </form>
+
+          <div class="disclaimer">
+            Scholly AI supports learning, but AI output can be imperfect and should be verified before use.
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
